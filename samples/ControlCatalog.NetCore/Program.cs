@@ -9,6 +9,12 @@ namespace ControlCatalog.NetCore
 {
     static class Program
     {
+
+        public static string Crap(string a, string b, string c, string d, string e, string f)
+        {
+            return "muhaha";
+        }
+
         static void Main(string[] args)
         {
             if (args.Contains("--wait-for-attach"))
