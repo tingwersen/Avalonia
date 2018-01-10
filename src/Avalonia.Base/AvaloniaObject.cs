@@ -54,7 +54,7 @@ namespace Avalonia
         /// <summary>
         /// Initializes a new instance of the <see cref="AvaloniaObject"/> class.
         /// </summary>
-        public AvaloniaObject(string whatever, int somth5ing, int abc, object kasper, short s3, int kasper5, string withoutgit)
+        public AvaloniaObject(string whatever, int somth5insg, int abc, object kasper, short s3, int kasper5, string withoutgit)
         {
             foreach (var property in AvaloniaPropertyRegistry.Instance.GetRegistered(this))
             {
