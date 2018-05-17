@@ -60,6 +60,7 @@ namespace Avalonia.Controls
             set { SetValue(BorderBrushProperty, value); }
         }
 
+        //this is perfect
         /// <summary>
         /// Gets or sets the thickness of the border.
         /// </summary>
