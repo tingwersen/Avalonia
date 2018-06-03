@@ -11,43 +11,44 @@ namespace Avalonia.Controls
     /// A panel that displays child controls at arbitrary locations.
     /// </summary>
     /// <remarks>
-    /// Unlike other <see cref="Panel"/> implementations, the <see cref="Canvas"/> doesn't lay out
+    /// Unlike other <see cref="Panel"/> implementations, the <see cref="CanvasWithModification"/> doesn't lay out
     /// its children in any particular layout. Instead, the positioning of each child control is
     /// defined by the <code>Canvas.Left</code>, <code>Canvas.Top</code>, <code>Canvas.Right</code>
     /// and <code>Canvas.Bottom</code> attached properties.
     /// </remarks>
-    public class Canvas : Panel, INavigableContainer
+    public class CanvasWithModification : Panel, INavigableContainer
     {
+        //this is a file modification
         /// <summary>
         /// Defines the Left attached property.
         /// </summary>
         public static readonly AttachedProperty<double> LeftProperty =
-            AvaloniaProperty.RegisterAttached<Canvas, Control, double>("Left", double.NaN);
+            AvaloniaProperty.RegisterAttached<CanvasWithModification, Control, double>("Left", double.NaN);
 
         /// <summary>
         /// Defines the Top attached property.
         /// </summary>
         public static readonly AttachedProperty<double> TopProperty =
-            AvaloniaProperty.RegisterAttached<Canvas, Control, double>("Top", double.NaN);
+            AvaloniaProperty.RegisterAttached<CanvasWithModification, Control, double>("Top", double.NaN);
 
         /// <summary>
         /// Defines the Right attached property.
         /// </summary>
         public static readonly AttachedProperty<double> RightProperty =
-            AvaloniaProperty.RegisterAttached<Canvas, Control, double>("Right", double.NaN);
+            AvaloniaProperty.RegisterAttached<CanvasWithModification, Control, double>("Right", double.NaN);
 
         /// <summary>
         /// Defines the Bottom attached property.
         /// </summary>
         public static readonly AttachedProperty<double> BottomProperty =
-            AvaloniaProperty.RegisterAttached<Canvas, Control, double>("Bottom", double.NaN);
+            AvaloniaProperty.RegisterAttached<CanvasWithModification, Control, double>("Bottom", double.NaN);
 
         /// <summary>
-        /// Initializes static members of the <see cref="Canvas"/> class.
+        /// Initializes static members of the <see cref="CanvasWithModification"/> class.
         /// </summary>
-        static Canvas()
+        static CanvasWithModification()
         {
-            ClipToBoundsProperty.OverrideDefaultValue<Canvas>(false);
+            ClipToBoundsProperty.OverrideDefaultValue<CanvasWithModification>(false);
             AffectsCanvasArrange(LeftProperty, TopProperty, RightProperty, BottomProperty);
         }
 
@@ -227,7 +228,7 @@ namespace Avalonia.Controls
         private static void AffectsCanvasArrangeInvalidate(AvaloniaPropertyChangedEventArgs e)
         {
             var control = e.Sender as IControl;
-            var canvas = control?.VisualParent as Canvas;
+            var canvas = control?.VisualParent as CanvasWithModification;
             canvas?.InvalidateArrange();
         }
     }
